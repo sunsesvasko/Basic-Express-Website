@@ -1,0 +1,23 @@
+.nav {
+    gap: 1rem;
+    display: flex;
+    padding: 1rem 2rem;
+    background-color: #232123;
+}
+
+#name {
+    color: white;
+    font-size: 1.2rem;
+}
+
+.links {
+    gap: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.links li a {
+    color: white;
+    text-decoration: none;
+    text-align: center;
+}

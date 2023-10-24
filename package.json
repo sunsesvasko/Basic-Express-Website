@@ -1,0 +1,23 @@
+{
+  "name": "basic-express-website",
+  "version": "1.0.0",
+  "description": "Basic Express Website",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sunsesvasko/Basic-Express-Website.git"
+  },
+  "author": "Vasko Blazhev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sunsesvasko/Basic-Express-Website/issues"
+  },
+  "homepage": "https://github.com/sunsesvasko/Basic-Express-Website#readme",
+  "dependencies": {
+    "dotenv": "^16.3.1"
+  }
+}

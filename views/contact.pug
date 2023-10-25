@@ -1,0 +1,21 @@
+extends base
+
+mixin formElement(labelEl) 
+    if(labelEl === 'Message')
+        label=`${labelEl}`
+        textarea.form-control(name='message', placeholder='Enter Message')
+    else
+        label=`${labelEl}`
+        input.form-control(type='text', name=`${labelEl.toLowerCase()}`, placeholder=`Enter ${labelEl}`)
+
+block content 
+    .container 
+        form(method='post', action='/contact/send')
+            h1 Contact 
+            .form-group
+                +formElement('Name')
+            .form-group 
+                +formElement('Email')
+            .form-group 
+                +formElement('Message')
+            button#submit-form(type='submit') Submit

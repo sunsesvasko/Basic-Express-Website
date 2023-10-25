@@ -3,7 +3,8 @@ const path = require('path');
 const http = require('http');
 const dotenv = require('dotenv');
 const express = require('express');
-const nodemailer = require('nodemailer');
+
+const viewRouter = require('./routes/viewRoutes');
 
 dotenv.config({ path: './config.env' });
 const port = process.env.PORT;
@@ -22,17 +23,7 @@ app.use(express.urlencoded({ extended: false, limit: '10kb' }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // === 2) Routes === //
-app.get('/', (req, res) => {
-
-    res.status(200).render('index', {
-        title: 'Welcome'
-    });
-})
-
-app.get('/about', (req, res) => {
-
-    res.status(200).render('about')
-})
+app.use('/', viewRouter);
 
 // === 3) Server === //
 app.listen(port);

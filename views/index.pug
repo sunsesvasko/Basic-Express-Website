@@ -1,0 +1,17 @@
+extends base.pug
+
+mixin article 
+    .article 
+        h3 Heading 
+        p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet rissu. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+        button#view-details View details >
+
+block content
+    section#welcome
+        h1 #{title}
+        p This is a template for a simple marketing or information website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.
+        button#learn-more Learn more >
+    section#articles 
+        +article
+        +article
+        +article

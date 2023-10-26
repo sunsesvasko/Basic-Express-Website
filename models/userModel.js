@@ -38,6 +38,8 @@ const userSchema = new mongoose.Schema({
     }
 });
 
+// === MIDDLEWARE === //
+
 // Hashing the user's password before it's stored in the database, so it's more secure and removing the passwordConfirm field because it's not necessary once it's done its job 
 userSchema.pre('save', async function(next) {
     if(!this.isModified('password')) return next();
@@ -47,6 +49,11 @@ userSchema.pre('save', async function(next) {
 
     next();
 });
+
+// === METHODS === //
+userSchema.methods.correctPassword = async function(canditatePassword, userPassword) {
+    return await bcrypt.compare(canditatePassword, userPassword); 
+}
 
 
 const User = mongoose.model('User', userSchema);

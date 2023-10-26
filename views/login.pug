@@ -1,3 +1,18 @@
-extends base
+extends base 
 
-block content
+block append head 
+    link(rel='stylesheet', href='/stylesheets/login.css')
+
+mixin formElement(labelEl) 
+    input.form-control(type='text', name=`${labelEl.toLowerCase()}`, placeholder=`Enter your ${labelEl}`)
+
+block content 
+    .login-container 
+        //- Change method to POST and action 
+        form.form(method='get', action='/')
+            h1 Login
+            .inputs
+                input(type='text', name='email', placeholder='Email')
+                input(type='password', name='password', placeholder='Password')
+            button#login-submit(type='submit') Login
+            p Don't have an account? <a href='/register' id='register'>Signup</a>

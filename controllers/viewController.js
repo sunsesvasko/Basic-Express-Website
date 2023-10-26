@@ -3,18 +3,22 @@ const nodemailer = require('nodemailer');
 exports.getOverview = (req, res) => {
 
     res.status(200).render('index', {
-        title: 'Welcome'
+        title: 'Home'
     });
 };
 
 exports.getAbout = (req, res) => {
 
-    res.status(200).render('about')
+    res.status(200).render('about', {
+        title: 'About'
+    });
 };
 
 exports.getContact = (req, res) => {
 
-    res.status(200).render('contact')
+    res.status(200).render('contact', {
+        title: 'Contact'
+    });
 };
 
 exports.sendMail = (req, res) => {
@@ -48,13 +52,13 @@ exports.sendMail = (req, res) => {
 exports.getLoginForm = (req, res) => {
 
     res.status(200).render('login', {
-        title: 'Login Form'
+        title: 'Login Page'
     });
 };
 
 exports.getRegisterForm = (req, res) => {
 
     res.status(200).render('register', {
-        title: 'Register Form'
+        title: 'Signup Page'
     });
 };

@@ -38,6 +38,17 @@ const userSchema = new mongoose.Schema({
     }
 });
 
+// Hashing the user's password before it's stored in the database, so it's more secure and removing the passwordConfirm field because it's not necessary once it's done its job 
+userSchema.pre('save', async function(next) {
+    if(!this.isModified('password')) return next();
+
+    this.password = await bcrypt.hash(this.password, 12);
+    this.passwordConfirm = undefined;
+
+    next();
+});
+
+
 const User = mongoose.model('User', userSchema);
 
 module.exports = User;

@@ -1,6 +1,9 @@
+block append head 
+    link(rel='stylesheet', href='/stylesheets/header.css')
+
 header 
     nav.nav
-        h1#name Project Name 
+        h1#name Basic Website
         ul.links 
             li 
                 a(href='/') Home 
@@ -8,3 +11,8 @@ header
                 a(href='/about') About 
             li 
                 a(href='/contact') Contact 
+        ul.links 
+            li 
+                a(href='/login') Login
+            li 
+                a(href='/register') Register

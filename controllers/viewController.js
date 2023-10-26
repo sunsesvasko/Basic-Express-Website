@@ -44,3 +44,17 @@ exports.sendMail = (req, res) => {
         }
     })
 }
+
+exports.getLoginForm = (req, res) => {
+
+    res.status(200).render('login', {
+        title: 'Login Form'
+    });
+};
+
+exports.getRegisterForm = (req, res) => {
+
+    res.status(200).render('register', {
+        title: 'Register Form'
+    });
+};

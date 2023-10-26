@@ -1,0 +1,19 @@
+extends base 
+
+block append head 
+    link(rel='stylesheet', href='/stylesheets/register.css')
+
+mixin formElement(labelEl) 
+    input.form-control(type='text', name=`${labelEl.toLowerCase()}`, placeholder=`Enter your ${labelEl}`)
+
+block content 
+    .register-container 
+        //- Change method to POST and action 
+        form.form(method='get', action='/')
+            h1 Signup
+            .inputs
+                input(type='text', name='email', placeholder='Enter your email')
+                input(type='password', name='password', placeholder='Create a password')
+                input(type='password', name='password', placeholder='Confirm your password')
+            button#register-submit(type='submit') Signup
+            p Already have an account? <a href='/login' id='login'>Login</a>

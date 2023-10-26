@@ -14,6 +14,7 @@ const sendErrorDev = (err, req, res) => {
     // Implement an error page
 }
 
+// Express will recognize this function as the Global Error Handler, because of the first argument (err), so all errors sent by the catchAsync function will be caught in this one
 module.exports = (err, req, res, next) => {
     err.statusCode = err.statusCode || 500;
     err.status = err.status || 'error';

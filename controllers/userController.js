@@ -51,7 +51,7 @@ exports.updateUser = catchAsync(async(req, res, next) => {
     });
 });
 
-exports.deleteUser = async (req, res, next) => {
+exports.deleteUser = catchAsync(async(req, res, next) => {
     const deletedUser = await User.findByIdAndDelete(req.params.id);
 
     if(!deletedUser) return next(new AppError('No user found with that ID', 404));
@@ -60,4 +60,4 @@ exports.deleteUser = async (req, res, next) => {
         status: 'success',
         user: deletedUser
     });
-}
+});

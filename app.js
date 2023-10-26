@@ -49,6 +49,7 @@ app.use((req, res, next) => {
 app.use('/', viewRouter);
 app.use('/api/users', userRouter);
 
+// Global Error Handler
 app.use(globalErrorHandler);
 
 module.exports = app;

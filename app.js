@@ -11,6 +11,8 @@ const localStrategy = require('passport-local').Strategy;
 const viewRouter = require('./routes/viewRoutes');
 const userRouter = require('./routes/userRoutes');
 
+const globalErrorHandler = require('./controllers/errorController');
+
 const app = express();
 
 // Setup multer
@@ -45,6 +47,8 @@ app.use((req, res, next) => {
 
 // === 2) Routes === //
 app.use('/', viewRouter);
-app.use('/users', userRouter);
+app.use('/api/users', userRouter);
+
+app.use(globalErrorHandler);
 
 module.exports = app;

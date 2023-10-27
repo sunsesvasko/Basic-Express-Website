@@ -3,8 +3,14 @@ body {
     display: flex;
     font-family: 'Roboto', sans-serif;
     flex-direction: column;
-    justify-content: space-between;
     background-color: #009578;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .register-container {
@@ -14,7 +20,7 @@ body {
     align-items: center;
 }
 
-.form {
+.form--signup {
     gap: 2rem;
     width: 300px;
     display: flex;
@@ -24,13 +30,13 @@ body {
     background-color: white;
 }
 
-.form h1 {
+.form--signup h1 {
     text-align: center;
     font-size: 2rem;
     font-weight: 500;
 }
 
-.form p {
+.form--signup p {
     text-align: center;
 }
 
@@ -41,6 +47,7 @@ body {
 }
 
 .inputs input {
+    font-size: 0.8rem;
     border: 1px solid lightgray;
     padding: 0.6rem;
     border-radius: 4px;

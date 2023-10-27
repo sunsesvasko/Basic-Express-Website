@@ -7,13 +7,14 @@ mixin formElement(labelEl)
     input.form-control(type='text', name=`${labelEl.toLowerCase()}`, placeholder=`Enter your ${labelEl}`)
 
 block content 
-    .register-container 
-        //- Change method to POST and action 
-        form.form(method='get', action='/')
-            h1 Signup
-            .inputs
-                input(type='text', name='email', placeholder='Enter your email')
-                input(type='password', name='password', placeholder='Create a password')
-                input(type='password', name='password', placeholder='Confirm your password')
-            button#register-submit(type='submit') Signup
-            p Already have an account? <a href='/login' id='login'>Login</a>
+    main
+        .register-container 
+            form.form--signup
+                h1 Signup
+                .inputs
+                    input#username(type='text', name='name', placeholder='Enter your username')
+                    input#email(type='text', name='email', placeholder='Enter your email')
+                    input#pass(type='password', name='password', placeholder='Create a password')
+                    input#passConfirm(type='password', name='password', placeholder='Confirm your password')
+                button#register-submit(type='submit') Signup
+                p Already have an account? <a href='/login' id='login'>Login</a>

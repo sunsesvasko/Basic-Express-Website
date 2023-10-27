@@ -1,3 +1,4 @@
+import { showAlert } from './alerts';
 import { login, logout } from './login';
 
 const loginForm = document.querySelector('.form--login');

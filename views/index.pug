@@ -10,11 +10,12 @@ mixin article
         button#view-details View details >
 
 block content
-    section#welcome
-        h1 #{title}
-        p This is a template for a simple marketing or information website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.
-        button#learn-more Learn more >
-    section#articles 
-        +article
-        +article
-        +article
+    main.main
+        section#welcome
+            h1 #{title}
+            p This is a template for a simple marketing or information website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.
+            button#learn-more Learn more >
+        section#articles 
+            +article
+            +article
+            +article

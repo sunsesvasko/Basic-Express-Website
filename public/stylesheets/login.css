@@ -3,8 +3,14 @@ body {
     display: flex;
     font-family: 'Roboto', sans-serif;
     flex-direction: column;
-    justify-content: space-between;
     background-color: #009578;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .login-container {

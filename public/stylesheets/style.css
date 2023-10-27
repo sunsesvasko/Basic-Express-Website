@@ -1,18 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
 
 body {
-    /* height: 100vh; */
+    height: 100vh;
     /* display: flex; */
     font-family: 'Roboto', sans-serif;
     /* flex-direction: column; */
     /* justify-content: space-between; */
 }
 
+/* MAIN */
+main {
+    height: 91vh;
+    display: flex;
+    flex-direction: column;
+}
+
 /* FOOTER */
 
 #footer {
+    color: white;
+    height: 5vh;
+    bottom: 0;
     display: flex;
+    align-items: center;
     justify-content: center;
+    background-color: #232123;
 }
 
 /* ??? */

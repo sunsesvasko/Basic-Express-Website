@@ -86,3 +86,26 @@ exports.protect = catchAsync(async(req, res, next) => {
     res.locals.user = user;
     next();
 });
+
+// Use only for rendered pages, no errors are thrown
+exports.isLoggedIn = async(req, res, next) => {
+    if(req.cookies.jwt) {
+        try{
+            // 1) Verify the JWT token
+            const decoded = await promisify(jwt.verify)(req.cookies.jwt, process.env.JWT_SECRET);
+
+            // 2) Check if user stills exists (decoded.id works, because the payload of the jwt is the user's id)
+            const currentUser = await User.findById(decoded.id);
+            if(!currentUser) return next();
+
+            // 3) Implement to check if user has changed password after the token was issued, which would require a new JWT upon change of password
+
+            // If there's a logged in user
+            res.locals.user = currentUser;
+            return next();
+        } catch(err) {
+            return next();
+        }
+    }
+    next();
+}

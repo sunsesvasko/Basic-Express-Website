@@ -12,7 +12,11 @@ header
             li 
                 a(href='/contact') Contact 
         ul.links 
-            li 
-                a(href='/login') Login
-            li 
-                a(href='/register') Register
+            if user
+                li
+                    a#logout--btn(href='#') Logout
+            else
+                li 
+                    a(href='/login') Login
+                li 
+                    a(href='/register') Register

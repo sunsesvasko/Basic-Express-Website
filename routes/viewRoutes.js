@@ -1,12 +1,14 @@
 const express = require('express');
 const viewController = require('./../controllers/viewController');
+const authController = require('./../controllers/authController');
 
 const router = express.Router();
 
-router.get('/', viewController.getOverview);
+router.get('/', authController.isLoggedIn,
+                viewController.getOverview);
 
-router.get('/about', viewController.getAbout);
-router.get('/contact', viewController.getContact);
+router.get('/about', authController.isLoggedIn, viewController.getAbout);
+router.get('/contact', authController.isLoggedIn, viewController.getContact);
 router.get('/login', viewController.getLoginForm);
 router.get('/register', viewController.getRegisterForm);
 

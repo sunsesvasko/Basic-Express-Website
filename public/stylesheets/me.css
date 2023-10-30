@@ -1,0 +1,74 @@
+main {
+    background-color: #F59831;
+}
+
+.form {
+    gap: 1rem;
+    width: auto;
+    height: 100vh;
+    margin: 4rem 6rem;
+    display: flex;
+    box-shadow: 0px 10px 10px 5px rgb(0, 0, 0, 0.25);
+    border-radius: 1rem;
+    flex-direction: column;
+    background-color: pink;
+}
+
+.form h1 {
+    padding: 1rem 0rem;
+    font-size: 2rem;
+    text-align: center;
+    border-radius: 1rem;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+#menu {
+    gap: 1rem;
+    width: 27.5%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+}
+
+.form--group {
+    gap: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form--group span {
+    position: relative;
+    top: 0px;
+    font-weight: bold;
+}
+
+#profile--img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+#photo {
+    display: flex;
+    flex-direction: column;
+}
+
+#change--picture {
+    width: 200px;
+    color: white;
+    text-transform: uppercase;
+    height: 40px;
+    background-color: #F56B4E;
+    border: none;
+    border-radius: 0.3rem;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+#change--picture {
+    cursor: pointer;
+}

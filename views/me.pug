@@ -1,0 +1,23 @@
+extends base
+
+block append head 
+    link(rel='stylesheet', href='/stylesheets/me.css')
+
+block content
+    main
+        form.form
+            h1 Account
+            .form--group
+                span Profile Picture 
+                img#profile--img(src="/uploads/angela.jpg", alt="")
+                input(type='file', accept='image/*', id='photo', name='photo')
+            .form--group 
+                label(for='name') Name
+                input(type='text', value=`${user.name}`, required)
+            .form--group 
+                label(for='email') Email
+                input(type='email', value=`${user.email}`, required)
+            .form--group
+                button#change--picture Save Settings
+            
+

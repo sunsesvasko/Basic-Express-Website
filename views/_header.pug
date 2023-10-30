@@ -13,6 +13,8 @@ header
                 a(href='/contact') Contact 
         ul.links 
             if user
+                li 
+                    a#profile--btn(href='/me') Profile
                 li
                     a#logout--btn(href='#') Logout
             else

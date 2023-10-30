@@ -62,3 +62,10 @@ exports.getRegisterForm = (req, res) => {
         title: 'Signup Page'
     });
 };
+
+exports.getMe = (req, res) => {
+
+    res.status(200).render('me', {
+        title: 'Profile Page'
+    })
+};

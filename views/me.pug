@@ -5,7 +5,7 @@ block append head
 
 block content
     main
-        form.form
+        form.settings--form
             h1 Account
             .form--group
                 //- span Profile Picture 
@@ -13,11 +13,11 @@ block content
                 input(type='file', accept='image/*', id='photo', name='photo')
             .form--group 
                 label(for='name') Name
-                input(type='text', value=`${user.name}`, required)
+                input#username(type='text', value=`${user.name}`, required)
             .form--group 
                 label(for='email') Email
-                input(type='email', value=`${user.email}`, required)
+                input#email(type='email', value=`${user.email}`, required)
             .form--group
-                button#change--picture Save Settings
+                button#save--settings(type='submit') Save Settings
             
 

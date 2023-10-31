@@ -5,7 +5,7 @@ main {
     background-color: #222321;
 }
 
-.form {
+.settings--form {
     gap: 1rem;
     width: 500px;
     height: auto;
@@ -18,7 +18,7 @@ main {
     background-color: #591E1E;
 }
 
-.form h1 {
+.settings--form h1 {
     color: white;
     padding: 1rem 0rem;
     font-size: 2rem;
@@ -66,7 +66,7 @@ main {
     flex-direction: column;
 }
 
-#change--picture {
+#save--settings {
     width: 200px;
     color: white;
     text-transform: uppercase;
@@ -78,6 +78,6 @@ main {
     border-bottom: 2px solid rgba(0, 0, 0, 0.2);
 }
 
-#change--picture {
+#save--settings {
     cursor: pointer;
 }

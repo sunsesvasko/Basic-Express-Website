@@ -49,6 +49,10 @@ app.use((req, res, next) => {
 app.use('/', viewRouter);
 app.use('/api/users', userRouter);
 
+app.all('*', (req, res, next) => {
+    next(new AppError(`Can't find ${req.originalUrl} on this server!`), 404);
+});
+
 // Global Error Handler
 app.use(globalErrorHandler);
 

@@ -9,10 +9,10 @@ block content
             h1 Account
             .form--group
                 //- span Profile Picture 
-                img#profile--img(src="/uploads/angela.jpg", alt="")
+                img#profile--img(src=`/uploads/${user.photo}`, alt="")
                 input(type='file', accept='image/*', id='photo', name='photo')
             .form--group 
-                label(for='name') Name
+                label(for='username') Name
                 input#username(type='text', value=`${user.name}`, required)
             .form--group 
                 label(for='email') Email

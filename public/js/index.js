@@ -38,12 +38,6 @@ if(signUpForm) {
 if(updateMeForm) {
     updateMeForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        // const dataObj = {
-        //     name: document.querySelector('#username').value,
-        //     email: document.querySelector('#email').value,
-        //     photo: document.querySelector('#photo').files[0]
-        // };
-        // console.log(`index.js photo: ${document.querySelector('#photo').value}`);
         const form = new FormData();
         form.append('name', document.querySelector('#username').value);
         form.append('email', document.querySelector('#email').value);

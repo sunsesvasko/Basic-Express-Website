@@ -8,17 +8,22 @@ export const updateSettings = async(data, type) => {
         const res = await axios({
             method: 'PATCH',
             url: `/api/users/${endPoint}`,
-            data,
+            data: data,
+            // headers: {
+            //     'Content-Type': 'multipart/form-data'
+            // }
         });
-        console.log([...data])
+        // console.log([...data])
 
         if(res.data.status === 'success') {
             showAlert('success', `${type.toUpperCase()} Updated Successfully!`);
             window.setTimeout(() => {
-                // location.reload(true);
+                location.reload(true);
             }, 1500)
         }
     } catch(err) {
-        showAlert('err', err.response.data.message);
+        console.log('err', err.message);
+        // console.log('err', err.response.data.message);
+        // showAlert('err', err.response.data.message);
     }
 }

@@ -1,4 +1,5 @@
 // === 0) Modules === //
+const cors = require('cors');
 const path = require('path');
 const flash = require('connect-flash');
 const multer = require('multer');
@@ -20,10 +21,16 @@ app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
 
 // === 1) Middlewares === //
+// Implementing CORS & Handling options request
+app.use(cors({
+    origin: true,
+    credentials: true
+}));
+app.options('*', cors());
 // Body parser, reading data from body into req.body
 app.use(express.json({ limit: '10kb' }));
 app.use(express.urlencoded({ extended: true, limit: '10kb' }));
-app.use(multer().array());
+// app.use(multer().array());
 app.use(cookieParser());
 // Set static folder
 app.use(express.static(path.join(__dirname, 'public')));

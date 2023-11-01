@@ -22,10 +22,7 @@ app.set('views', path.join(__dirname, 'views'));
 
 // === 1) Middlewares === //
 // Implementing CORS & Handling options request
-app.use(cors({
-    origin: true,
-    credentials: true
-}));
+app.use(cors());
 app.options('*', cors());
 // Body parser, reading data from body into req.body
 app.use(express.json({ limit: '10kb' }));

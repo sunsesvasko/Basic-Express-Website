@@ -5617,9 +5617,6 @@ var updateSettings = exports.updateSettings = /*#__PURE__*/function () {
             method: 'PATCH',
             url: "/api/users/".concat(endPoint),
             data: data
-            // headers: {
-            //     'Content-Type': 'multipart/form-data'
-            // }
           });
         case 4:
           res = _context.sent;
@@ -5631,15 +5628,18 @@ var updateSettings = exports.updateSettings = /*#__PURE__*/function () {
               location.reload(true);
             }, 1500);
           }
-          _context.next = 11;
+          _context.next = 12;
           break;
         case 8:
           _context.prev = 8;
           _context.t0 = _context["catch"](0);
-          console.log('err', _context.t0.message);
+          console.log('err', _context.t0);
+          window.setTimeout(function () {
+            location.reload(true);
+          }, 1500);
           // console.log('err', err.response.data.message);
           // showAlert('err', err.response.data.message);
-        case 11:
+        case 12:
         case "end":
           return _context.stop();
       }
@@ -5720,7 +5720,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59738" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51825" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

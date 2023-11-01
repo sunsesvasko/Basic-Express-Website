@@ -8,10 +8,7 @@ export const updateSettings = async(data, type) => {
         const res = await axios({
             method: 'PATCH',
             url: `/api/users/${endPoint}`,
-            data: data,
-            // headers: {
-            //     'Content-Type': 'multipart/form-data'
-            // }
+            data
         });
         // console.log([...data])
 
@@ -22,7 +19,10 @@ export const updateSettings = async(data, type) => {
             }, 1500)
         }
     } catch(err) {
-        console.log('err', err.message);
+        console.log('err', err);
+        window.setTimeout(() => {
+            location.reload(true);
+        }, 1500);
         // console.log('err', err.response.data.message);
         // showAlert('err', err.response.data.message);
     }
